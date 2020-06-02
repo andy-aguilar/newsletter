@@ -5,8 +5,8 @@ require 'pry'
 #########################
 require "pry"
 CAMPUS = {
-  "name": "DC",
-  "address": "1440 G St NW, Washington, DC 20005",
+  :name => "DC",
+  :address => "1440 G St NW, Washington, DC 20005",
 }
 DATE = "Nov 20, 2019"
 
@@ -54,7 +54,7 @@ def print_many_articles(articles)
 end
 
 def format_campus_location(campus)
-  "Flatiron #{campus["name"]}"
+  "Flatiron #{campus[:name]}"
 end
 
 def format_subject
