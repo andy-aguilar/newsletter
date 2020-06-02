@@ -3,7 +3,6 @@ require 'pry'
 #########################
 # Data for the newsletter
 #########################
-require "pry"
 CAMPUS = {
   :name => "DC",
   :address => "1440 G St NW, Washington, DC 20005",
@@ -29,40 +28,31 @@ ARTICLES = [
 
 def calculate_recipients (subs, unsubs)
   # Using the SUBSCRIBERS and UNSUBSCRIBED arrays,
-  # write a method that will return an array of only the subscribers who haven't unsubscribed
- recipients = subs.find_all do |readers|
-    !unsubs.include? readers 
+  # Returns an array of only the subscribers who haven't unsubscribed
+ recipients = subs.find_all do |unsubscribed_readers|
+    !unsubs.include? unsubscribed_readers
   end
 return recipients
 end
 
-# calculate_recipients(SUBSCRIBERS, UNSUBSCRIBED)
-### might need this for recipients later
-
 def first_n_articles(number_of_articles)
+  #Takes an integer (n) and returns an array of the first n article hashes
   ARTICLES.first(number_of_articles)
 end
 
 def print_recipients
-  # Write a method that uses the output of calculate_recipients
-  # and returns a list of emails separated by commas
+  # Returns a list of emails separated by commas
   # Ex) "abc@email.com, def@email.com, ghi@email.com"
-  recipients = calculate_recipients(SUBSCRIBERS, UNSUBSCRIBED) 
-  print "#{recipients.join( ", ")}\n"
-  #binding.pry
-
+  print "#{calculate_recipients(SUBSCRIBERS, UNSUBSCRIBED).join( ", ")}\n"
 end
 
 def print_one_article(article)
-  # Write a method that will take an article hash
-  # and print the title, author and text as a formatted string
-  # See the README/sample output for examples
+  # Takes an article hash and prints the title, author and text as a formatted string
   print "#{article[:title]} \nby: #{article[:author]} \n#{article[:text]}\n\n"
 end
 
 def print_many_articles(articles)
-  # Write a method that will take in an array of article hashes
-  # and format each one using the print_one_article method
+  # Takes in an array of article hashes (ex. from first_n_articles) and format each one using the print_one_article method
   articles.each do |article_hash|
     print_one_article(article_hash)
   end
