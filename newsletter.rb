@@ -47,6 +47,10 @@ def print_recipients
   # Write a method that uses the output of calculate_recipients
   # and returns a list of emails separated by commas
   # Ex) "abc@email.com, def@email.com, ghi@email.com"
+  recipients = calculate_recipients(SUBSCRIBERS, UNSUBSCRIBED) 
+  print recipients.join( ", ")
+  #binding.pry
+
 end
 
 def print_one_article(article)
