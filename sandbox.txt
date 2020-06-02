@@ -1,0 +1,4 @@
+def calculate_calculate recipients
+    iterate through the subscribers array
+        look for anything that's in unsubscribe
+    return a new array with only subscribers
