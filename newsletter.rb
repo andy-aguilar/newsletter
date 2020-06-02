@@ -27,10 +27,17 @@ ARTICLES = [
 # Methods to generate the newsletter
 #########################
 
-def calculate_recipients
+def calculate_recipients (subs, unsubs)
   # Using the SUBSCRIBERS and UNSUBSCRIBED arrays,
   # write a method that will return an array of only the subscribers who haven't unsubscribed
+ recipients = subs.find_all do |readers|
+    !unsubs.include? readers 
+  end
+return recipients
 end
+
+# calculate_recipients(SUBSCRIBERS, UNSUBSCRIBED)
+### might need this for recipients later
 
 def first_n_articles(number_of_articles)
   ARTICLES.first(number_of_articles)
