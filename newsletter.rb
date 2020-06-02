@@ -48,7 +48,7 @@ def print_recipients
   # and returns a list of emails separated by commas
   # Ex) "abc@email.com, def@email.com, ghi@email.com"
   recipients = calculate_recipients(SUBSCRIBERS, UNSUBSCRIBED) 
-  print recipients.join( ", ")
+  print "#{recipients.join( ", ")}\n"
   #binding.pry
 
 end
@@ -57,7 +57,7 @@ def print_one_article(article)
   # Write a method that will take an article hash
   # and print the title, author and text as a formatted string
   # See the README/sample output for examples
-  print "#{article[:title]} \nby: #{article[:author]} \n#{article[:text]}\n\n\n"
+  print "#{article[:title]} \nby: #{article[:author]} \n#{article[:text]}\n\n"
 end
 
 def print_many_articles(articles)
